@@ -1,0 +1,19 @@
+#entry {
+	color: red;
+	font-family: myFirstFont;
+	font-size: 34px;
+	border: 6px solid;
+	border-radius: 25px;
+	box-shadow: 10px 10px 5px #888888;
+}
+@font-face {
+	font-family: 'myFirstFont';
+	src: url('../fonts/honeyscript-light-webfont.woff') format('woff'),
+		url('../fonts/honeyscript-light-webfont.woff2') format('woff2'),
+		url('../fonts/honeyscript-light-webfont.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+.imgbackup {
+	background-image: url('../images/cheap.png');
+	width: 200px;
+	height: 300px;
+}

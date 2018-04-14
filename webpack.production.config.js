@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const autoprefixer = require('autoprefixer')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const ImageminPlugin = require('imagemin-webpack-plugin').default
 
 module.exports = {
   entry: {
@@ -93,6 +94,12 @@ module.exports = {
     new ExtractTextPlugin('/css/[name].css', { allChunks: true }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common' // 指定公共 bundle 的名称。
+    })，
+    new ImageminPlugin({
+      disable: process.env.NODE_ENV !== 'production', // Disable during development
+      pngquant: {
+        quality: '95-100'
+      }
     })
   ]
 }
